@@ -43,7 +43,7 @@ ActiveScaffold.ActionLink.Abstract.prototype.close = function() {
       end
 
       def onsubmit_with_ckeditor
-        submit_js = 'this.select("textarea.CKEditor").each(function(elem) {var oEditor = CKEDITOR.instances[elem.id]; document.getElementById(elem.id+"_hidden").value = oEditor.getData();CKEDITOR.instances[elem.id].destroy(false);});' #if using_ckeditor?
+        submit_js = '$(this).find("textarea.CKEditor").each( function(id, elem) {$("#"+elem.id+"_hidden").value = CKEDITOR.instances[elem.id].getData();CKEDITOR.instances[elem.id].destroy(false);});'
         [onsubmit_without_ckeditor, submit_js].compact.join ';'
       end
     end

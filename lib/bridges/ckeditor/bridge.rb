@@ -1,4 +1,4 @@
-ActiveScaffold.bridge "CKEditor" do
+ActiveScaffold::Bridges.bridge "CKEditor" do
     require File.join(File.dirname(__FILE__), "/lib/ckeditor_bridge.rb")
    install do
     require File.join(File.dirname(__FILE__), "/lib/ckeditor_bridge.rb")
